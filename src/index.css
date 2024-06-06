@@ -23,3 +23,9 @@ h1 {
   #good{
     color: green;
   }
+
+  ul {
+    list-style-type: none;
+    margin: 1;
+    padding: 0;
+  }
