@@ -1,39 +1,37 @@
-import { useState } from 'react'
-import Notification from './Notification'
+import { useState } from "react";
+import Notification from "./Notification";
 const BlogForm = ({ createBlog }) => {
-
-    const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
-    const [url, setUrl] = useState('')
-    const [message, setMessage] = useState(null)
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [url, setUrl] = useState("");
+  const [message, setMessage] = useState(null);
 
   const addBlog = async (event) => {
-    event.preventDefault()
-  
+    event.preventDefault();
+
     createBlog({
       title: title,
       author: author,
-      url: url
-  })
+      url: url,
+    });
 
-    setMessage('a new blog '+ title + ' by '+ author + ' added')
+    setMessage("a new blog " + title + " by " + author + " added");
     setTimeout(() => {
-    setMessage(null)
-    }, 5000)
-    setTitle('')
-    setAuthor('')
-    setUrl('')
-      
-  }
+      setMessage(null);
+    }, 5000);
+    setTitle("");
+    setAuthor("");
+    setUrl("");
+  };
 
   return (
     <div>
-      <Notification bad = {false} message={message}/>
+      <Notification bad={false} message={message} />
       <h2>create new</h2>
       <form onSubmit={addBlog}>
         <div>
           Title:
-            <input
+          <input
             type="text"
             value={title}
             name="Title"
@@ -42,7 +40,7 @@ const BlogForm = ({ createBlog }) => {
         </div>
         <div>
           Author:
-            <input
+          <input
             type="text"
             value={author}
             name="Author"
@@ -51,7 +49,7 @@ const BlogForm = ({ createBlog }) => {
         </div>
         <div>
           url:
-            <input
+          <input
             type="text"
             value={url}
             name="url"
@@ -60,10 +58,8 @@ const BlogForm = ({ createBlog }) => {
         </div>
         <button type="submit">Create</button>
       </form>
-   
+    </div>
+  );
+};
 
-     </div>
-  )
-}
-
-export default BlogForm
+export default BlogForm;
