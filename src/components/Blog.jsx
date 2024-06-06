@@ -1,14 +1,14 @@
-import Togglable from "./Togglable";
-import { useRef } from "react";
+import Togglable from './Togglable'
+import { useRef } from 'react'
 const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
-    border: "solid",
+    border: 'solid',
     borderWidth: 1,
     marginBottom: 5,
-  };
-  const blogDetailsRef = useRef();
+  }
+  const blogDetailsRef = useRef()
 
   return (
     <div style={blogStyle}>
@@ -19,7 +19,7 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
         <ul>
           <li>{blog.url}</li>
           <li>
-            Likes {blog.likes}{" "}
+            Likes {blog.likes}{' '}
             <button onClick={() => handleLike(blog.id)}>Like</button>
           </li>
           <li>{blog.user.name ? blog.user.name : blog.user.username}</li>
@@ -27,9 +27,9 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
         {authUser.id === blog.user.id && (
           <button
             style={{
-              backgroundColor: "#008CBA",
-              border: "none",
-              borderRadius: "5px",
+              backgroundColor: '#008CBA',
+              border: 'none',
+              borderRadius: '5px',
             }}
             onClick={() => handleDelete(blog.id)}
           >
@@ -38,7 +38,7 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
         )}
       </Togglable>
     </div>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog

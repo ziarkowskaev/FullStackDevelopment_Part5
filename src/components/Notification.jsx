@@ -1,6 +1,6 @@
 const Notification = ({ message, bad }) => {
   if (message === null) {
-    return null;
+    return null
   }
 
   if (!bad) {
@@ -8,10 +8,10 @@ const Notification = ({ message, bad }) => {
       <div className="notification" id="good">
         {message}
       </div>
-    );
+    )
   } else {
-    return <div className="notification">{message}</div>;
+    return <div className="notification">{message}</div>
   }
-};
+}
 
-export default Notification;
+export default Notification
