@@ -12,12 +12,12 @@ test(' form calls the event handler it received as props with the right details 
   const sendButton = screen.getByText('Create')
 
   await user.type(inputs[0], 'Testing React')
-  await user.type(inputs[1], 'Jane Doe')
+  await user.type(inputs[1], 'Michael Chan')
   await user.type(inputs[2], 'https://reacttesting.com')
   await user.click(sendButton)
 
   expect(createBlog).toHaveBeenCalledTimes(1)
   expect(createBlog.mock.calls[0][0].title).toBe('Testing React')
-  expect(createBlog.mock.calls[0][0].author).toBe('Jane Doe')
+  expect(createBlog.mock.calls[0][0].author).toBe('Michael Chan')
   expect(createBlog.mock.calls[0][0].url).toBe('https://reacttesting.com')
 })
