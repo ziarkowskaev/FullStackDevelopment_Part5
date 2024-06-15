@@ -12,7 +12,7 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
   const blogDetailsRef = useRef()
 
   return (
-    <div style={blogStyle}>
+    <div className='blog' style={blogStyle}>
       <div>
         {blog.title} {blog.author}
       </div>
@@ -40,13 +40,6 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
       </Togglable>
     </div>
   )
-}
-
-Blog.propTypes = {
-  blog: PropTypes.object.isRequired,
-  handleLike: PropTypes.func.isRequired,
-  authUser: PropTypes.object.isRequired,
-  handleDelete : PropTypes.func.isRequired,
 }
 
 export default Blog
