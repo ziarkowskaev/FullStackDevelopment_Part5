@@ -19,7 +19,7 @@ const Blog = ({ blog, handleLike, authUser, handleDelete }) => {
       <Togglable buttonLabel="View details" ref={blogDetailsRef}>
         <ul>
           <li>{blog.url}</li>
-          <li>
+          <li data-testid='likes'>
             Likes {blog.likes}{' '}
             <button onClick={() => handleLike(blog.id)}>Like</button>
           </li>
